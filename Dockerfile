@@ -3,8 +3,8 @@ FROM php:8.2-apache
 # Instalar extensiones de base de datos
 RUN docker-php-ext-install pdo pdo_mysql
 
-# Cambiar la raíz del documento de Apache a la carpeta public de Laravel
-RUN sed -i 's|/var/www/html|/var/www/html/public|g' /etc/apache2/sites-available/0000-default.conf \
+# Cambiar la raíz del documento de Apache a la carpeta public de Laravel (CON 3 CEROS)
+RUN sed -i 's|/var/www/html|/var/www/html/public|g' /etc/apache2/sites-available/000-default.conf \
     && sed -i 's|/var/www/html|/var/www/html/public|g' /etc/apache2/apache2.conf
 
 # Copiar el código del proyecto
